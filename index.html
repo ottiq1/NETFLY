@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>IQ NETFLY | الموزع المعتمد في العراق</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -29,7 +32,7 @@ body{
 /* Scroll */
 
 ::-webkit-scrollbar{
-    width:10px;
+    width:8px;
 }
 
 ::-webkit-scrollbar-track{
@@ -44,51 +47,55 @@ body{
 /* Navbar */
 
 .navbar{
-    width:100%;
     position:fixed;
     top:0;
     right:0;
+    width:100%;
     z-index:999;
-    backdrop-filter:blur(12px);
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav-content{
-    max-width:1300px;
+    max-width:1250px;
     margin:auto;
+    padding:12px 18px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    padding:18px 20px;
+    align-items:center;
+    gap:20px;
 }
 
-.logo{
-    font-size:32px;
-    font-weight:800;
+.brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.brand h1{
     color:#e50914;
+    font-size:28px;
     letter-spacing:2px;
+    font-weight:800;
 }
 
-.logo span{
-    color:#fff;
-    font-size:14px;
-    display:block;
-    letter-spacing:1px;
+.brand span{
+    color:#d5d5d5;
+    font-size:12px;
 }
 
 .nav-links{
     display:flex;
-    gap:22px;
+    gap:18px;
     flex-wrap:wrap;
 }
 
 .nav-links a{
     color:#fff;
     text-decoration:none;
-    font-size:15px;
+    font-size:14px;
     transition:.3s;
-    position:relative;
 }
 
 .nav-links a:hover{
@@ -100,13 +107,13 @@ body{
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(to bottom,rgba(0,0,0,.4),#000),
-    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1600&auto=format&fit=crop') center/cover;
+    linear-gradient(to bottom,rgba(0,0,0,.45),#000),
+    url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1800&auto=format&fit=crop') center/cover;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:120px 20px 80px;
+    padding:120px 20px 60px;
 }
 
 .hero-content{
@@ -114,21 +121,25 @@ body{
     animation:fadeUp 1s ease;
 }
 
-.hero h1{
-    font-size:65px;
-    line-height:1.2;
-    margin-bottom:20px;
-    font-weight:800;
+.hero small{
+    display:block;
+    color:#ccc;
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-.hero h1 span{
+.hero h2{
+    font-size:75px;
     color:#e50914;
+    font-weight:800;
+    margin-bottom:20px;
+    letter-spacing:3px;
 }
 
 .hero p{
-    font-size:22px;
     color:#ddd;
-    line-height:1.9;
+    font-size:21px;
+    line-height:2;
     margin-bottom:35px;
 }
 
@@ -136,30 +147,29 @@ body{
     display:inline-block;
     background:#e50914;
     color:#fff;
-    padding:16px 40px;
-    border-radius:8px;
+    padding:15px 38px;
+    border-radius:10px;
     text-decoration:none;
-    font-size:18px;
     font-weight:700;
     transition:.3s;
 }
 
 .hero-btn:hover{
     transform:scale(1.05);
-    background:#ff1f29;
+    background:#ff2933;
 }
 
-/* Section */
+/* Sections */
 
 .section{
-    max-width:1300px;
+    max-width:1250px;
     margin:auto;
-    padding:90px 20px;
+    padding:75px 18px;
 }
 
 .section-title{
-    font-size:42px;
-    margin-bottom:45px;
+    font-size:34px;
+    margin-bottom:35px;
     position:relative;
     display:inline-block;
 }
@@ -167,167 +177,175 @@ body{
 .section-title::after{
     content:'';
     position:absolute;
-    bottom:-12px;
+    bottom:-10px;
     right:0;
     width:70%;
     height:4px;
-    background:#e50914;
     border-radius:20px;
+    background:#e50914;
 }
 
 /* Cards */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
 }
 
 .card{
-    background:linear-gradient(180deg,#141414,#0a0a0a);
+    position:relative;
     border-radius:18px;
     overflow:hidden;
+    min-height:260px;
     border:1px solid rgba(255,255,255,.08);
     transition:.4s;
-    position:relative;
+    background-size:cover;
+    background-position:center;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,.35));
 }
 
 .card:hover{
-    transform:translateY(-8px) scale(1.02);
+    transform:translateY(-6px);
     border-color:#e50914;
-    box-shadow:0 0 35px rgba(229,9,20,.35);
+    box-shadow:0 0 25px rgba(229,9,20,.35);
 }
 
-.card-top{
-    padding:30px 25px 15px;
+.card-content{
+    position:relative;
+    z-index:2;
+    padding:22px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
 }
 
-.card-tag{
-    background:#e50914;
+.badge{
     display:inline-block;
-    padding:6px 14px;
+    background:#e50914;
+    color:#fff;
+    font-size:11px;
+    padding:5px 12px;
     border-radius:50px;
-    font-size:13px;
-    margin-bottom:18px;
+    margin-bottom:12px;
+    width:fit-content;
 }
 
 .card h3{
-    font-size:28px;
-    margin-bottom:12px;
+    font-size:24px;
+    margin-bottom:10px;
 }
 
 .price{
-    font-size:36px;
+    color:#fff;
+    font-size:28px;
     font-weight:800;
-    color:#e50914;
-    margin-bottom:18px;
-}
-
-.card ul{
-    list-style:none;
-    margin-bottom:20px;
-}
-
-.card ul li{
-    margin-bottom:12px;
-    color:#ddd;
-    line-height:1.7;
+    margin-bottom:15px;
 }
 
 .toggle-btn{
-    width:100%;
-    border:none;
     background:#e50914;
+    border:none;
     color:#fff;
-    padding:15px;
-    font-size:16px;
-    font-weight:700;
+    padding:12px;
+    border-radius:8px;
     cursor:pointer;
+    font-weight:700;
     transition:.3s;
 }
 
 .toggle-btn:hover{
-    background:#ff2c35;
+    background:#ff2a35;
 }
 
 .extra{
     max-height:0;
     overflow:hidden;
     transition:max-height .5s ease;
-    background:#0f0f0f;
 }
 
 .extra-content{
-    padding:22px;
-    color:#ccc;
+    margin-top:18px;
+    color:#ddd;
     line-height:2;
+    font-size:14px;
 }
 
-/* Info boxes */
+/* Info */
 
 .info-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
 }
 
 .info-box{
-    background:#111;
-    border:1px solid rgba(255,255,255,.08);
+    position:relative;
+    overflow:hidden;
     border-radius:18px;
-    padding:30px;
-    transition:.4s;
+    min-height:230px;
+    background-size:cover;
+    background-position:center;
+    border:1px solid rgba(255,255,255,.08);
 }
 
-.info-box:hover{
-    border-color:#e50914;
-    transform:translateY(-5px);
+.info-box::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.94),rgba(0,0,0,.35));
 }
 
-.info-box h3{
-    color:#e50914;
-    margin-bottom:20px;
-    font-size:28px;
+.info-content{
+    position:relative;
+    z-index:2;
+    padding:25px;
 }
 
-.info-box p,
-.info-box li{
+.info-content h3{
+    color:#fff;
+    font-size:26px;
+    margin-bottom:18px;
+}
+
+.info-content p,
+.info-content li{
     color:#ddd;
     line-height:2;
+    font-size:14px;
 }
 
-.info-box ul{
+.info-content ul{
     padding-right:18px;
 }
 
-/* Buttons */
+/* Modal */
 
 .modal-btn{
-    margin-top:25px;
-    background:#e50914;
+    margin-top:20px;
     border:none;
+    background:#e50914;
     color:#fff;
-    padding:15px 25px;
+    padding:13px 22px;
     border-radius:10px;
     cursor:pointer;
-    font-size:16px;
     font-weight:700;
-    transition:.3s;
 }
-
-.modal-btn:hover{
-    background:#ff2c35;
-}
-
-/* Modal */
 
 .modal{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.85);
     display:none;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     z-index:9999;
     padding:20px;
 }
@@ -339,7 +357,7 @@ body{
     border-radius:20px;
     padding:35px;
     position:relative;
-    border:1px solid rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.08);
     animation:fadeUp .5s ease;
     max-height:90vh;
     overflow:auto;
@@ -347,17 +365,15 @@ body{
 
 .close{
     position:absolute;
-    top:15px;
-    left:20px;
+    top:10px;
+    left:18px;
     font-size:35px;
     cursor:pointer;
-    color:#fff;
 }
 
 .modal-content h2{
     color:#e50914;
     margin-bottom:25px;
-    font-size:36px;
 }
 
 .modal-content p{
@@ -369,15 +385,15 @@ body{
 /* Footer */
 
 .footer{
-    background:#070707;
-    border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
     padding:35px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    background:#080808;
 }
 
 .footer h3{
     color:#e50914;
-    margin-bottom:12px;
+    margin-bottom:10px;
     font-size:28px;
 }
 
@@ -390,32 +406,32 @@ body{
 
 .float{
     position:fixed;
-    bottom:25px;
-    left:25px;
+    left:20px;
+    bottom:20px;
     z-index:999;
 }
 
 .float a{
-    width:65px;
-    height:65px;
+    width:62px;
+    height:62px;
     border-radius:50%;
     background:#25D366;
     display:flex;
-    align-items:center;
     justify-content:center;
-    color:#fff;
+    align-items:center;
     text-decoration:none;
-    font-size:30px;
-    box-shadow:0 0 20px rgba(37,211,102,.5);
+    color:#fff;
+    font-size:28px;
+    box-shadow:0 0 18px rgba(37,211,102,.5);
     animation:pulse 2s infinite;
 }
 
-/* Animations */
+/* Animation */
 
 @keyframes fadeUp{
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(35px);
     }
     to{
         opacity:1;
@@ -424,86 +440,93 @@ body{
 }
 
 @keyframes pulse{
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.08);
-    }
-    100%{
-        transform:scale(1);
-    }
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
 }
 
-/* Responsive */
+/* Mobile */
 
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    .section-title{
-        font-size:32px;
-    }
-
     .nav-content{
         flex-direction:column;
-        gap:15px;
+        padding:10px 15px;
     }
 
     .nav-links{
         justify-content:center;
+        gap:14px;
+    }
+
+    .hero h2{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .hero{
+        padding-top:150px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
+
     <div class="nav-content">
-        <div class="logo">
-            NETFLY
-            <span>IQ NETFLY - الموزع المعتمد في العراق</span>
+
+        <div class="brand">
+            <h1>IQ NETFLY</h1>
+            <span>الموزع المعتمد في العراق</span>
         </div>
 
         <div class="nav-links">
             <a href="#home">الرئيسية</a>
-            <a href="#plans">بطاقات الاشتراك</a>
+            <a href="#plans">الباقات</a>
             <a href="#guide">التعليمات</a>
-            <a href="#download">التحميل</a>
             <a href="#privacy">الخصوصية</a>
         </div>
+
     </div>
+
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 
 <section class="hero" id="home">
+
     <div class="hero-content">
-        <h1>
-            مرحباً بك في <span>IQ NETFLY</span>
-        </h1>
+
+        <small>مرحباً بك في</small>
+
+        <h2>IQ NETFLY</h2>
 
         <p>
-            تجربة ترفيه متكاملة تضم أحدث الأفلام والمسلسلات والبث المباشر
-            بجودة عالية وتشغيل مستقر على جميع الأجهزة الذكية.
+            منصة ترفيه متكاملة تضم أحدث الأفلام والمسلسلات والبث المباشر
+            بجودة عالية وتشغيل مستقر على الهواتف والتلفزيونات والأجهزة اللوحية.
         </p>
 
         <a href="#plans" class="hero-btn">
-            عرض الباقات
+            استعراض الباقات
         </a>
+
     </div>
+
 </section>
 
-<!-- Plans -->
+<!-- PLANS -->
 
 <section class="section" id="plans">
 
@@ -513,101 +536,95 @@ body{
 
     <div class="cards">
 
-        <!-- 3 Months -->
+        <!-- CARD 1 -->
 
-        <div class="card">
+        <div class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop');">
 
-            <div class="card-top">
-                <div class="card-tag">الأكثر طلباً</div>
+            <div class="card-content">
+
+                <span class="badge">الأكثر طلباً</span>
 
                 <h3>اشتراك 3 أشهر</h3>
 
-                <div class="price">
-                    25,000 IQD
+                <div class="price">25,000 IQD</div>
+
+                <button class="toggle-btn">
+                    عرض التفاصيل
+                </button>
+
+                <div class="extra">
+
+                    <div class="extra-content">
+                        ✔ مشاهدة مستقرة وعالية الجودة<br>
+                        ✔ مكتبة أفلام ومسلسلات متجددة<br>
+                        ✔ تشغيل على جميع الأجهزة الذكية
+                    </div>
+
                 </div>
 
-                <ul>
-                    <li>✔ تشغيل سريع ومستقر</li>
-                    <li>✔ مكتبة أفلام ومسلسلات ضخمة</li>
-                    <li>✔ دعم لجميع الأجهزة</li>
-                </ul>
-            </div>
-
-            <button class="toggle-btn">
-                عرض التفاصيل
-            </button>
-
-            <div class="extra">
-                <div class="extra-content">
-                    اشتراك اقتصادي مناسب للتجربة والاستمتاع بالمحتوى الترفيهي
-                    والبث المباشر بجودة عالية مع تحديثات مستمرة للمكتبة.
-                </div>
             </div>
 
         </div>
 
-        <!-- 6 Months -->
+        <!-- CARD 2 -->
 
-        <div class="card">
+        <div class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop');">
 
-            <div class="card-top">
-                <div class="card-tag">عرض مميز</div>
+            <div class="card-content">
+
+                <span class="badge">عرض مميز</span>
 
                 <h3>اشتراك 6 أشهر</h3>
 
-                <div class="price">
-                    40,000 IQD
+                <div class="price">40,000 IQD</div>
+
+                <button class="toggle-btn">
+                    عرض التفاصيل
+                </button>
+
+                <div class="extra">
+
+                    <div class="extra-content">
+                        ✔ بث مباشر سريع ومستقر<br>
+                        ✔ تحديثات مستمرة للمحتوى<br>
+                        ✔ دعم فني متواصل
+                    </div>
+
                 </div>
 
-                <ul>
-                    <li>✔ جودة عرض ممتازة</li>
-                    <li>✔ تحديثات مستمرة</li>
-                    <li>✔ دعم فني متواصل</li>
-                </ul>
-            </div>
-
-            <button class="toggle-btn">
-                عرض التفاصيل
-            </button>
-
-            <div class="extra">
-                <div class="extra-content">
-                    يمنحك هذا الاشتراك تجربة مشاهدة طويلة مع أداء مستقر
-                    وإمكانية الوصول إلى أحدث المحتويات المضافة باستمرار.
-                </div>
             </div>
 
         </div>
 
-        <!-- 12 Months -->
+        <!-- CARD 3 -->
 
-        <div class="card">
+        <div class="card"
+        style="background-image:url('https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=1200&auto=format&fit=crop');">
 
-            <div class="card-top">
-                <div class="card-tag">الأفضل قيمة</div>
+            <div class="card-content">
+
+                <span class="badge">الأفضل قيمة</span>
 
                 <h3>اشتراك سنة كاملة</h3>
 
-                <div class="price">
-                    65,000 IQD
+                <div class="price">65,000 IQD</div>
+
+                <button class="toggle-btn">
+                    عرض التفاصيل
+                </button>
+
+                <div class="extra">
+
+                    <div class="extra-content">
+                        ✔ أفضل سعر سنوي<br>
+                        ✔ مشاهدة بدون تقطيع<br>
+                        ✔ تحديثات دورية مستمرة
+                    </div>
+
                 </div>
 
-                <ul>
-                    <li>✔ أفضل سعر سنوي</li>
-                    <li>✔ بث مباشر مستقر</li>
-                    <li>✔ مشاهدة بدون انقطاع</li>
-                </ul>
-            </div>
-
-            <button class="toggle-btn">
-                عرض التفاصيل
-            </button>
-
-            <div class="extra">
-                <div class="extra-content">
-                    الخيار المثالي لمحبي الترفيه الكامل طوال السنة
-                    مع تجربة استخدام احترافية وتحديثات دورية مستمرة.
-                </div>
             </div>
 
         </div>
@@ -616,7 +633,7 @@ body{
 
 </section>
 
-<!-- Instructions -->
+<!-- GUIDE -->
 
 <section class="section" id="guide">
 
@@ -626,50 +643,74 @@ body{
 
     <div class="info-grid">
 
-        <div class="info-box">
-            <h3>طريقة الاستخدام</h3>
+        <!-- BOX 1 -->
 
-            <ul>
-                <li>تأكد من أن جهازك يحتوي على مساحة تخزين كافية.</li>
-                <li>قم بتثبيت التطبيق على جهازك.</li>
-                <li>تواصل مع الوكيل لتفعيل الاشتراك.</li>
-                <li>استخدم التطبيقات الرسمية فقط.</li>
-                <li>نحن غير مسؤولين عن التطبيقات غير الرسمية.</li>
-            </ul>
+        <div class="info-box"
+        style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');">
+
+            <div class="info-content">
+
+                <h3>طريقة الاستخدام</h3>
+
+                <button class="toggle-btn">
+                    عرض التعليمات
+                </button>
+
+                <div class="extra">
+
+                    <div class="extra-content">
+
+                        ✔ تأكد من توفر مساحة كافية بالجهاز.<br>
+                        ✔ قم بتثبيت التطبيق الرسمي فقط.<br>
+                        ✔ تواصل مع الوكيل لتفعيل الاشتراك.<br>
+                        ✔ تجنب التطبيقات المزيفة وغير الرسمية.
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="info-box" id="download">
-            <h3>طريقة التحميل</h3>
+        <!-- BOX 2 -->
 
-            <p>
-                استخدم الأكواد التالية داخل تطبيق Downloader:
-            </p>
+        <div class="info-box"
+        style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');">
 
-            <p>
-                📱 الهاتف: 6001502 - 7679302
-            </p>
+            <div class="info-content">
 
-            <p>
-                📺 التلفزيون وجهاز الاستقبال:
-                3838758 - 6375545
-            </p>
+                <h3>طريقة التحميل</h3>
 
-            <p>
-                📲 الجهاز اللوحي:
-                6745346 - 3820141
-            </p>
+                <button class="toggle-btn">
+                    عرض الأكواد
+                </button>
 
-            <p>
-                افتح تطبيق Downloader ثم أدخل الرمز المناسب
-                وسيبدأ التنزيل تلقائياً.
-            </p>
+                <div class="extra">
+
+                    <div class="extra-content">
+
+                        📱 الهاتف: 6001502 - 7679302<br><br>
+
+                        📺 التلفزيون وجهاز الاستقبال:<br>
+                        3838758 - 6375545<br><br>
+
+                        📲 الجهاز اللوحي:<br>
+                        6745346 - 3820141
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- Privacy -->
+<!-- PRIVACY -->
 
 <section class="section" id="privacy">
 
@@ -677,23 +718,27 @@ body{
         سياسة الاستخدام والخصوصية
     </h2>
 
-    <div class="info-box">
+    <div class="info-box"
+    style="background-image:url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop');">
 
-        <p>
-            يلتزم IQ NETFLY بحماية خصوصية المستخدمين وضمان استخدام آمن للخدمة.
-            يتم استخدام المعلومات التقنية فقط لتحسين جودة الأداء والدعم الفني،
-            ولا يتم بيع أو مشاركة بيانات المستخدم مع أي جهة خارجية.
-        </p>
+        <div class="info-content">
 
-        <button class="modal-btn" onclick="openModal()">
-            قراءة السياسة كاملة
-        </button>
+            <p>
+                نحافظ على خصوصية المستخدمين ونلتزم بتوفير تجربة استخدام
+                آمنة وموثوقة لجميع العملاء.
+            </p>
+
+            <button class="modal-btn" onclick="openModal()">
+                قراءة السياسة كاملة
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- Modal -->
+<!-- MODAL -->
 
 <div class="modal" id="policyModal">
 
@@ -703,69 +748,57 @@ body{
             &times;
         </span>
 
-        <h2>
-            سياسة الاستخدام والخصوصية
-        </h2>
+        <h2>سياسة الاستخدام والخصوصية</h2>
 
         <p>
-            باستخدامك لخدمة NETFLY فإنك توافق على الالتزام بشروط الاستخدام
-            الخاصة بالخدمة وعدم إساءة استخدامها بأي شكل مخالف للقوانين المحلية.
+            باستخدامك لخدمة IQ NETFLY فإنك توافق على شروط الاستخدام
+            الخاصة بالخدمة وعدم إساءة استخدامها بأي شكل مخالف للقوانين.
         </p>
 
         <p>
-            يلتزم فريق IQ NETFLY بالحفاظ على سرية بيانات المستخدم وعدم
-            مشاركة أي معلومات شخصية مع أي طرف خارجي دون موافقة مسبقة.
+            يتم الحفاظ على خصوصية بيانات المستخدمين وعدم مشاركة أي
+            معلومات شخصية مع أي جهة خارجية.
         </p>
 
         <p>
-            يتم جمع بعض البيانات التقنية البسيطة بهدف تحسين الأداء
-            وضمان استقرار الخدمة وتقديم الدعم الفني المناسب.
+            يمنع استخدام التطبيقات أو النسخ غير الرسمية التي قد
+            تعرض بياناتك للخطر أو تسبب مشاكل في الخدمة.
         </p>
 
         <p>
-            يمنع استخدام التطبيقات أو النسخ المعدلة غير الرسمية،
-            حيث قد تؤدي إلى مشاكل أمنية أو سرقة البيانات،
-            ونحن غير مسؤولين عن أي ضرر ناتج عن ذلك.
-        </p>
-
-        <p>
-            تحتفظ الإدارة بحق تعديل الأسعار أو تحديث سياسة الاستخدام
-            بما يتوافق مع متطلبات الخدمة مستقبلاً.
+            تحتفظ الإدارة بحق تحديث الأسعار أو شروط الاستخدام
+            بما يتناسب مع تطوير الخدمة مستقبلاً.
         </p>
 
     </div>
 
 </div>
 
-<!-- Footer -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
-    <h3>
-        IQ NETFLY
-    </h3>
+    <h3>IQ NETFLY</h3>
 
-    <p>
-        الموزع المعتمد في العراق
-    </p>
+    <p>الموزع المعتمد في العراق</p>
 
-    <p>
-        جميع الحقوق محفوظة © 2026
-    </p>
+    <p>جميع الحقوق محفوظة © 2026</p>
 
 </footer>
 
-<!-- WhatsApp -->
+<!-- WHATSAPP -->
 
 <div class="float">
+
     <a href="https://wa.me/9647740393776" target="_blank">
         ☎
     </a>
+
 </div>
 
-<script>
+<!-- SCRIPT -->
 
-/* Expand Cards */
+<script>
 
 const buttons = document.querySelectorAll('.toggle-btn');
 
@@ -776,32 +809,36 @@ buttons.forEach(button => {
         const extra = button.nextElementSibling;
 
         if(extra.style.maxHeight){
+
             extra.style.maxHeight = null;
-            button.innerText = 'عرض التفاصيل';
+            button.innerText = button.innerText.includes('إغلاق')
+            ? 'عرض التفاصيل'
+            : 'عرض التعليمات';
+
         }else{
+
             extra.style.maxHeight = extra.scrollHeight + "px";
-            button.innerText = 'إغلاق التفاصيل';
+            button.innerText = 'إغلاق';
+
         }
 
     });
 
 });
 
-/* Modal */
-
 const modal = document.getElementById('policyModal');
 
 function openModal(){
-    modal.style.display = 'flex';
+    modal.style.display='flex';
 }
 
 function closeModal(){
-    modal.style.display = 'none';
+    modal.style.display='none';
 }
 
 window.onclick = function(event){
     if(event.target == modal){
-        modal.style.display = "none";
+        modal.style.display='none';
     }
 }
 
