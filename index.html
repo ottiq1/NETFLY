@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IQ NETFLY | الموزع المعتمد في العراق</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#e50914;
+    border-radius:20px;
+}
+
+/* Navbar */
+
+.navbar{
+    width:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,.75);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-content{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 20px;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+    color:#e50914;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#fff;
+    font-size:14px;
+    display:block;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#e50914;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(to bottom,rgba(0,0,0,.4),#000),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1600&auto=format&fit=crop') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    font-size:22px;
+    color:#ddd;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#e50914;
+    color:#fff;
+    padding:16px 40px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:scale(1.05);
+    background:#ff1f29;
+}
+
+/* Section */
+
+.section{
+    max-width:1300px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:45px;
+    position:relative;
+    display:inline-block;
+}
+
+.section-title::after{
+    content:'';
+    position:absolute;
+    bottom:-12px;
+    right:0;
+    width:70%;
+    height:4px;
+    background:#e50914;
+    border-radius:20px;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:linear-gradient(180deg,#141414,#0a0a0a);
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:#e50914;
+    box-shadow:0 0 35px rgba(229,9,20,.35);
+}
+
+.card-top{
+    padding:30px 25px 15px;
+}
+
+.card-tag{
+    background:#e50914;
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:50px;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.price{
+    font-size:36px;
+    font-weight:800;
+    color:#e50914;
+    margin-bottom:18px;
+}
+
+.card ul{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.card ul li{
+    margin-bottom:12px;
+    color:#ddd;
+    line-height:1.7;
+}
+
+.toggle-btn{
+    width:100%;
+    border:none;
+    background:#e50914;
+    color:#fff;
+    padding:15px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.toggle-btn:hover{
+    background:#ff2c35;
+}
+
+.extra{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .5s ease;
+    background:#0f0f0f;
+}
+
+.extra-content{
+    padding:22px;
+    color:#ccc;
+    line-height:2;
+}
+
+/* Info boxes */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.info-box{
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px;
+    transition:.4s;
+}
+
+.info-box:hover{
+    border-color:#e50914;
+    transform:translateY(-5px);
+}
+
+.info-box h3{
+    color:#e50914;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.info-box p,
+.info-box li{
+    color:#ddd;
+    line-height:2;
+}
+
+.info-box ul{
+    padding-right:18px;
+}
+
+/* Buttons */
+
+.modal-btn{
+    margin-top:25px;
+    background:#e50914;
+    border:none;
+    color:#fff;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.modal-btn:hover{
+    background:#ff2c35;
+}
+
+/* Modal */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:20px;
+}
+
+.modal-content{
+    width:100%;
+    max-width:800px;
+    background:#111;
+    border-radius:20px;
+    padding:35px;
+    position:relative;
+    border:1px solid rgba(255,255,255,.1);
+    animation:fadeUp .5s ease;
+    max-height:90vh;
+    overflow:auto;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    left:20px;
+    font-size:35px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.modal-content h2{
+    color:#e50914;
+    margin-bottom:25px;
+    font-size:36px;
+}
+
+.modal-content p{
+    color:#ddd;
+    line-height:2.2;
+    margin-bottom:15px;
+}
+
+/* Footer */
+
+.footer{
+    background:#070707;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    padding:35px 20px;
+}
+
+.footer h3{
+    color:#e50914;
+    margin-bottom:12px;
+    font-size:28px;
+}
+
+.footer p{
+    color:#bbb;
+    line-height:2;
+}
+
+/* Floating */
+
+.float{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    z-index:999;
+}
+
+.float a{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 0 20px rgba(37,211,102,.5);
+    animation:pulse 2s infinite;
+}
+
+/* Animations */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .nav-content{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        justify-content:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+    <div class="nav-content">
+        <div class="logo">
+            NETFLY
+            <span>IQ NETFLY - الموزع المعتمد في العراق</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#plans">بطاقات الاشتراك</a>
+            <a href="#guide">التعليمات</a>
+            <a href="#download">التحميل</a>
+            <a href="#privacy">الخصوصية</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>
+            مرحباً بك في <span>IQ NETFLY</span>
+        </h1>
+
+        <p>
+            تجربة ترفيه متكاملة تضم أحدث الأفلام والمسلسلات والبث المباشر
+            بجودة عالية وتشغيل مستقر على جميع الأجهزة الذكية.
+        </p>
+
+        <a href="#plans" class="hero-btn">
+            عرض الباقات
+        </a>
+    </div>
+</section>
+
+<!-- Plans -->
+
+<section class="section" id="plans">
+
+    <h2 class="section-title">
+        بطاقات الاشتراك
+    </h2>
+
+    <div class="cards">
+
+        <!-- 3 Months -->
+
+        <div class="card">
+
+            <div class="card-top">
+                <div class="card-tag">الأكثر طلباً</div>
+
+                <h3>اشتراك 3 أشهر</h3>
+
+                <div class="price">
+                    25,000 IQD
+                </div>
+
+                <ul>
+                    <li>✔ تشغيل سريع ومستقر</li>
+                    <li>✔ مكتبة أفلام ومسلسلات ضخمة</li>
+                    <li>✔ دعم لجميع الأجهزة</li>
+                </ul>
+            </div>
+
+            <button class="toggle-btn">
+                عرض التفاصيل
+            </button>
+
+            <div class="extra">
+                <div class="extra-content">
+                    اشتراك اقتصادي مناسب للتجربة والاستمتاع بالمحتوى الترفيهي
+                    والبث المباشر بجودة عالية مع تحديثات مستمرة للمكتبة.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 6 Months -->
+
+        <div class="card">
+
+            <div class="card-top">
+                <div class="card-tag">عرض مميز</div>
+
+                <h3>اشتراك 6 أشهر</h3>
+
+                <div class="price">
+                    40,000 IQD
+                </div>
+
+                <ul>
+                    <li>✔ جودة عرض ممتازة</li>
+                    <li>✔ تحديثات مستمرة</li>
+                    <li>✔ دعم فني متواصل</li>
+                </ul>
+            </div>
+
+            <button class="toggle-btn">
+                عرض التفاصيل
+            </button>
+
+            <div class="extra">
+                <div class="extra-content">
+                    يمنحك هذا الاشتراك تجربة مشاهدة طويلة مع أداء مستقر
+                    وإمكانية الوصول إلى أحدث المحتويات المضافة باستمرار.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 12 Months -->
+
+        <div class="card">
+
+            <div class="card-top">
+                <div class="card-tag">الأفضل قيمة</div>
+
+                <h3>اشتراك سنة كاملة</h3>
+
+                <div class="price">
+                    65,000 IQD
+                </div>
+
+                <ul>
+                    <li>✔ أفضل سعر سنوي</li>
+                    <li>✔ بث مباشر مستقر</li>
+                    <li>✔ مشاهدة بدون انقطاع</li>
+                </ul>
+            </div>
+
+            <button class="toggle-btn">
+                عرض التفاصيل
+            </button>
+
+            <div class="extra">
+                <div class="extra-content">
+                    الخيار المثالي لمحبي الترفيه الكامل طوال السنة
+                    مع تجربة استخدام احترافية وتحديثات دورية مستمرة.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Instructions -->
+
+<section class="section" id="guide">
+
+    <h2 class="section-title">
+        تعليمات الاستخدام
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h3>طريقة الاستخدام</h3>
+
+            <ul>
+                <li>تأكد من أن جهازك يحتوي على مساحة تخزين كافية.</li>
+                <li>قم بتثبيت التطبيق على جهازك.</li>
+                <li>تواصل مع الوكيل لتفعيل الاشتراك.</li>
+                <li>استخدم التطبيقات الرسمية فقط.</li>
+                <li>نحن غير مسؤولين عن التطبيقات غير الرسمية.</li>
+            </ul>
+        </div>
+
+        <div class="info-box" id="download">
+            <h3>طريقة التحميل</h3>
+
+            <p>
+                استخدم الأكواد التالية داخل تطبيق Downloader:
+            </p>
+
+            <p>
+                📱 الهاتف: 6001502 - 7679302
+            </p>
+
+            <p>
+                📺 التلفزيون وجهاز الاستقبال:
+                3838758 - 6375545
+            </p>
+
+            <p>
+                📲 الجهاز اللوحي:
+                6745346 - 3820141
+            </p>
+
+            <p>
+                افتح تطبيق Downloader ثم أدخل الرمز المناسب
+                وسيبدأ التنزيل تلقائياً.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Privacy -->
+
+<section class="section" id="privacy">
+
+    <h2 class="section-title">
+        سياسة الاستخدام والخصوصية
+    </h2>
+
+    <div class="info-box">
+
+        <p>
+            يلتزم IQ NETFLY بحماية خصوصية المستخدمين وضمان استخدام آمن للخدمة.
+            يتم استخدام المعلومات التقنية فقط لتحسين جودة الأداء والدعم الفني،
+            ولا يتم بيع أو مشاركة بيانات المستخدم مع أي جهة خارجية.
+        </p>
+
+        <button class="modal-btn" onclick="openModal()">
+            قراءة السياسة كاملة
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Modal -->
+
+<div class="modal" id="policyModal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">
+            &times;
+        </span>
+
+        <h2>
+            سياسة الاستخدام والخصوصية
+        </h2>
+
+        <p>
+            باستخدامك لخدمة NETFLY فإنك توافق على الالتزام بشروط الاستخدام
+            الخاصة بالخدمة وعدم إساءة استخدامها بأي شكل مخالف للقوانين المحلية.
+        </p>
+
+        <p>
+            يلتزم فريق IQ NETFLY بالحفاظ على سرية بيانات المستخدم وعدم
+            مشاركة أي معلومات شخصية مع أي طرف خارجي دون موافقة مسبقة.
+        </p>
+
+        <p>
+            يتم جمع بعض البيانات التقنية البسيطة بهدف تحسين الأداء
+            وضمان استقرار الخدمة وتقديم الدعم الفني المناسب.
+        </p>
+
+        <p>
+            يمنع استخدام التطبيقات أو النسخ المعدلة غير الرسمية،
+            حيث قد تؤدي إلى مشاكل أمنية أو سرقة البيانات،
+            ونحن غير مسؤولين عن أي ضرر ناتج عن ذلك.
+        </p>
+
+        <p>
+            تحتفظ الإدارة بحق تعديل الأسعار أو تحديث سياسة الاستخدام
+            بما يتوافق مع متطلبات الخدمة مستقبلاً.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+    <h3>
+        IQ NETFLY
+    </h3>
+
+    <p>
+        الموزع المعتمد في العراق
+    </p>
+
+    <p>
+        جميع الحقوق محفوظة © 2026
+    </p>
+
+</footer>
+
+<!-- WhatsApp -->
+
+<div class="float">
+    <a href="https://wa.me/9647740393776" target="_blank">
+        ☎
+    </a>
+</div>
+
+<script>
+
+/* Expand Cards */
+
+const buttons = document.querySelectorAll('.toggle-btn');
+
+buttons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const extra = button.nextElementSibling;
+
+        if(extra.style.maxHeight){
+            extra.style.maxHeight = null;
+            button.innerText = 'عرض التفاصيل';
+        }else{
+            extra.style.maxHeight = extra.scrollHeight + "px";
+            button.innerText = 'إغلاق التفاصيل';
+        }
+
+    });
+
+});
+
+/* Modal */
+
+const modal = document.getElementById('policyModal');
+
+function openModal(){
+    modal.style.display = 'flex';
+}
+
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
